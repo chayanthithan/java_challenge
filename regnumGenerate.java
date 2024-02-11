@@ -4,11 +4,10 @@ import java.lang.*;
 class regnumGenerate{
 	private String course=null;
 	Date d=new Date();
-	int count;
-	//private static regnumGenerate obj=null;
-	private regnumGenerate(){
-		course="icts";
-		count=1;
+	int count=1;
+	
+	public regnumGenerate(String courseName){
+		this.course=courseName;
 	}
 	// static regnumGenerate getInstance(){
 		// obj=new regnumGenerate();
@@ -23,7 +22,10 @@ class regnumGenerate{
 	}
 	
 	public static void main(String []args){
-		regnumGenerate a=new regnumGenerate();
+		Scanner scan=new Scanner(System.in);
+		System.out.print("Enter your course-name here:");
+		String cName=scan.nextLine();
+		regnumGenerate a=new regnumGenerate(cName);
 		System.out.println(a.generate());
 	}
 }
